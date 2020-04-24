@@ -1,0 +1,5 @@
+export const ADD_TASK = 'TASK?ADD_TASK'
+export const REMOVE_TASK = 'TASK?REMOVE'
+export const COMPLETE_TASK = 'TASK?COMPLETE_TASK'
+export const CHANGE_FILTER = 'FILTER?CHANGE_FILTER'
+export const REWORK_TASK = 'TASK?REWORK'

@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.list-group-item {
+  position: relative;
+  overflow: hidden;
+}
+.ready{
+  border: 2px solid blue;
+}
+.no-ready {
+  border: 2px solid orangered;
+}
+.fa-times {
+    font-size: 20px;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    transition: all .3s linear;
+}
+.complete{
+  position: absolute;
+  bottom: 10px;
+  right: 35px;
+  transition: all .5s linear;
+
+}
+
+.fa-times:hover {
+    transform: rotate(90deg);
+}
+.active{
+  background: blue!important;
+}
