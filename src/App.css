@@ -21,6 +21,7 @@
 .list-group-item {
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
 .ready{
   border: 2px solid blue;

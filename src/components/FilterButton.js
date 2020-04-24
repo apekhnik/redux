@@ -10,7 +10,13 @@ const Filterbutton = () => {
     
     return(
         <div className='btn-group'>
-            {buttons.map(btn=><Button name={btn.filter} onClick={()=>dispatch(changeFilter(btn.filter))}/>)}
+            {buttons.map(btn=>{
+                return <Button 
+                name={btn.filter} 
+                className='btn btn-secondary'
+                onClick={()=>dispatch(changeFilter(btn.filter))}
+                />
+            })}
         </div>
     )
 }

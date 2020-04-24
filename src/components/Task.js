@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { completeTask, reworkTask, removeTask } from '../redux/action'
 import classnames from 'classnames'
+import Button from './Button'
 
 const Task =({text, onClick, index, isCompleted, id})=>{
     console.log(isCompleted)
@@ -9,23 +10,33 @@ const Task =({text, onClick, index, isCompleted, id})=>{
     const clname = isCompleted ? 'ready' : 'no-ready'
     const cl = classnames(
         "list-group-item",
+        'card',
         clname
     )
     return(
-        <li className={cl}>
+        
+        <div className={cl} style={{width: '25rem'}}>
+            <div class="card-body" >
             {index+1}.{text}
-            <div className='complete'>
-                <button type="button"
-                 disabled={!isCompleted}
-                onClick={()=>dispatch(reworkTask(id))}
-                className="btn btn-danger btn-sm">Rework</button>
-                <button type="button"
-                onClick={()=>dispatch(completeTask(id))}
-                disabled={isCompleted} 
-                className="btn btn-success btn-sm">Complete</button>
+                <div className='complete'>
+                    <Button
+                        disabled={!isCompleted}
+                        onClick={()=>dispatch(reworkTask(id))}
+                        className="btn btn-danger btn-sm"
+                        name='Rework'
+                    />
+                    <Button
+                        onClick={()=>dispatch(completeTask(id))}
+                        disabled={isCompleted} 
+                        className="btn btn-success btn-sm"
+                        name='Complete'
+                    />
+
+                </div>
+                <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
+
             </div>
-            <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
-        </li>
+        </div>
     )
 }
 export default Task

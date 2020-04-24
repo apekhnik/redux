@@ -21,6 +21,7 @@ const Tasklist =()=>{
     }
     const filteredTask = filterTask(tasks, filter)
     console.log(filter,'currentFilter')
+    
     return(
         <ul className="list-group">
             {filteredTask.map((item, index)=><Task 
