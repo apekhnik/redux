@@ -21,13 +21,13 @@ const Tasklist =()=>{
         }
     }
     const filteredTask = filterTask(tasks, filter)
-    console.log(filter,'currentFilter')
+    console.log(filteredTask,'currentFilter')
     
     return(
         // <ul className="list-group">
                 
         //             {filteredTask.map((item, index)=>{
-        //                 <Task 
+        //                 return <Task 
         //                     text={item.text}
         //                     key={item.id}
         //                     id={item.id}
@@ -41,11 +41,11 @@ const Tasklist =()=>{
         <TransitionGroup component='ul' className='list-group'>
                 
                 {filteredTask.map((item, index)=>{
+                    
                     return    <CSSTransition
                                     timeout={500}
                                     classNames="list-group-item"
                                     key={index}
-                                    unmountOnExit
                                 >
                                     <Task 
                                         text={item.text}

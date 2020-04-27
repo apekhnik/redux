@@ -3,12 +3,13 @@ import Form from './components/Form'
 import Tasklist from './components/Tasklist';
 import Filterbutton from './components/FilterButton';
 import './App.css'
-const App = () => {
+import Header from './components/Header';
+const App = ({width}) => {
   
   return (
-    <div className='container'>
-      
-      <Filterbutton/>
+    <div className='container' style={{width: width/2+'px'}}>
+      <Header/>
+      {/* <Filterbutton/> */}
       <Form/>
       <Tasklist/>
     </div>

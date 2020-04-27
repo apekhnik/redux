@@ -16,7 +16,7 @@ const Task =({text, onClick, index, isCompleted, id})=>{
     )
     return(
         
-        <div className={cl} style={{width: '25rem'}}>
+        <div className={cl} >
             <div class="card-body" >
             <span className={clname}>{index+1}.{text}</span>
                 <div className='complete'>

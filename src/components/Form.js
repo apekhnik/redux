@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../redux/action'
-
+import Filterbutton from './FilterButton'
 
 
 const Form = () => {
@@ -27,6 +27,7 @@ const Form = () => {
                 onChange={(e)=>setInputValue(e.target.value)}
                 />
             </div>
+            
         </form>
     )
 }

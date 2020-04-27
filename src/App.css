@@ -25,7 +25,9 @@
   
 }
 .list-group-item span {
-  transition: all 1s ease-in-out;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  transition: all .5s ease-in-out;
 }
 .ready{
   /* border: 2px solid blue; */
@@ -59,6 +61,16 @@
 .active{
   background: blue!important;
 }
+
+
+
+
+
+
+
+
+
+
 /* CSSTransition */
 .list-group-item-enter,
 .list-group-item-appear {
@@ -72,7 +84,7 @@
 .list-group-item-appear-active {
   opacity: 1;
   transform: scale(1);
-  transition: all 1000ms;
+  transition: all 500ms;
 }
 
 /* This fires as soon as the this.state.showList is false */
@@ -87,3 +99,15 @@
   
 }
 /* CSSTransition */
+
+
+/* Form */
+  form{
+    position: relative;
+  }
+  .btn-group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+/* Form */
