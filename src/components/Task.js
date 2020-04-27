@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { completeTask, reworkTask, removeTask } from '../redux/action'
 import classnames from 'classnames'
 import Button from './Button'
+import { CSSTransition } from 'react-transition-group'
 
 const Task =({text, onClick, index, isCompleted, id})=>{
     console.log(isCompleted)
@@ -17,7 +18,7 @@ const Task =({text, onClick, index, isCompleted, id})=>{
         
         <div className={cl} style={{width: '25rem'}}>
             <div class="card-body" >
-            {index+1}.{text}
+            <span className={clname}>{index+1}.{text}</span>
                 <div className='complete'>
                     <Button
                         disabled={!isCompleted}

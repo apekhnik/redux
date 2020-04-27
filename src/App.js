@@ -4,10 +4,12 @@ import Tasklist from './components/Tasklist';
 import Filterbutton from './components/FilterButton';
 import './App.css'
 const App = () => {
+  
   return (
     <div className='container'>
-      <Form/>
+      
       <Filterbutton/>
+      <Form/>
       <Tasklist/>
     </div>
   )

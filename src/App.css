@@ -22,12 +22,21 @@
   position: relative;
   overflow: hidden;
   padding: 0;
+  
+}
+.list-group-item span {
+  transition: all 1s ease-in-out;
 }
 .ready{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  
+}
+.ready span {
+  text-decoration: line-through;
+  color: blue
 }
 .no-ready {
-  border: 2px solid orangered;
+  /* border: 2px solid orangered; */
 }
 .fa-times {
     font-size: 20px;
@@ -50,3 +59,31 @@
 .active{
   background: blue!important;
 }
+/* CSSTransition */
+.list-group-item-enter,
+.list-group-item-appear {
+  /*We give the list the initial dimension of the list button*/
+  opacity: 0;
+  color: transparent;
+  transform: scale(0.3);
+}
+/* This is where we can add the transition*/
+.list-group-item-enter-done,
+.list-group-item-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1000ms;
+}
+
+/* This fires as soon as the this.state.showList is false */
+.list-group-item-exit {
+  opacity: .3;
+  transform: scale(0.1);
+  transition: all 1000ms;
+}
+/* fires as element leaves the DOM*/
+.list-group-item-exit-active {
+ 
+  
+}
+/* CSSTransition */

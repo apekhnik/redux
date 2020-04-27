@@ -20,7 +20,6 @@ const Form = () => {
     return (
         <form onSubmit={submitTask}>
             <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Password</label>
                 <input type="text" 
                 className="form-control" 
                 id="exampleInputPassword1"
@@ -28,8 +27,6 @@ const Form = () => {
                 onChange={(e)=>setInputValue(e.target.value)}
                 />
             </div>
-  
-            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }
