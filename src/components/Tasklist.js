@@ -3,23 +3,24 @@ import Task from './Task'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeTask, completeTask } from '../redux/action'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
+export const filterTask = (tasks, filter) => {
+    switch (filter) {
+        case 'all':
+            return tasks;
+        case 'completed':
+            return tasks.filter(task=>task.isCompleted)
+        case 'active':
+            return tasks.filter(task=>!task.isCompleted)
+        default: return tasks
+    }
+}
 const Tasklist =()=>{
     
     const tasks = useSelector(state=>state.task.tasks)
     const filter = useSelector(state=>state.filter.filter)
     const dispatch = useDispatch()
     
-    const filterTask = (tasks, filter) => {
-        switch (filter) {
-            case 'all':
-                return tasks;
-            case 'completed':
-                return tasks.filter(task=>task.isCompleted)
-            case 'active':
-                return tasks.filter(task=>!task.isCompleted)
-            default: return tasks
-        }
-    }
+   
     const filteredTask = filterTask(tasks, filter)
     console.log(filteredTask,'currentFilter')
     

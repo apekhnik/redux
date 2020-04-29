@@ -6,37 +6,38 @@ import Button from './Button'
 import { CSSTransition } from 'react-transition-group'
 
 const Task =({text, onClick, index, isCompleted, id})=>{
-    console.log(isCompleted)
     const dispatch = useDispatch()
     const clname = isCompleted ? 'ready' : 'no-ready'
     const cl = classnames(
         "list-group-item",
-        'card',
         clname
     )
+    const redo = <i className="fas fa-history"/>
+    const complete =  isCompleted ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
     return(
         
         <div className={cl} >
-            <div class="card-body" >
+            
             <span className={clname}>{index+1}.{text}</span>
                 <div className='complete'>
                     <Button
                         disabled={!isCompleted}
                         onClick={()=>dispatch(reworkTask(id))}
-                        className="btn btn-danger btn-sm"
-                        name='Rework'
+                        className="btn btn-danger btn-sm btn-complete-group"
+                        name={redo}
                     />
                     <Button
                         onClick={()=>dispatch(completeTask(id))}
                         disabled={isCompleted} 
-                        className="btn btn-success btn-sm"
-                        name='Complete'
+                        className="btn btn-primary btn-sm btn-complete-group"
+                        name={complete}
                     />
 
                 </div>
+                
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 
-            </div>
+            
         </div>
     )
 }

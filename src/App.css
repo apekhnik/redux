@@ -21,7 +21,7 @@
 .list-group-item {
   position: relative;
   overflow: hidden;
-  padding: 0;
+  padding: 5px;
   
 }
 .list-group-item span {
@@ -35,7 +35,7 @@
 }
 .ready span {
   text-decoration: line-through;
-  color: blue
+  color: #007bff
 }
 .no-ready {
   /* border: 2px solid orangered; */
@@ -49,17 +49,31 @@
 }
 .complete{
   position: absolute;
-  bottom: 10px;
+  top: 5px;
   right: 35px;
   transition: all .5s linear;
-
+  height: 100%;
 }
 
 .fa-times:hover {
     transform: rotate(90deg);
 }
 .active{
-  background: blue!important;
+  background: #007bff!important;
+}
+.btn-complete-group {
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.btn-danger:disabled {
+  color: #fff;
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #eb2f06;
+  border-color: #eb2f06;
 }
 
 
@@ -71,6 +85,18 @@
 
 
 
+
+
+
+
+
+
+
+
+.list-group {
+  max-height: 500px;
+    overflow: hidden;
+}
 /* CSSTransition */
 .list-group-item-enter,
 .list-group-item-appear {
@@ -111,3 +137,26 @@
     right: 0;
   }
 /* Form */
+
+
+/* TODO */
+  .todo{
+    background-color: #c8d6e5;
+    border: transparent;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    min-height: 300px;
+    
+  }
+/* TODO */
+
+
+/* LAYOUT */
+  .layout {
+    padding-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 48%, rgba(0,212,255,1) 79%);
+  }
+/* LAYOUT */
