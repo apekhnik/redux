@@ -1,7 +1,8 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK } from "./types";
 const initialState = {
     tasks: [{text:'первый таск', id: 1, isCompleted: false},
-            {text:'второй таск', id: 2, isCompleted: false}]
+            {text:'второй таск', id: 2, isCompleted: false},
+            {text:'третий таск', id: 3, isCompleted: false}]
 }
 export const taskReducer = (state=initialState, action) =>{
     switch (action.type) {

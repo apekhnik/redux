@@ -6,8 +6,8 @@ const Footer = () => {
     const task = useSelector(state=>state.task.tasks)
     const active = filterTask(task, 'completed')
     return(
-        <div>
-            <span>Выполнено {active.length} из {task.length}</span>
+        <div className='footer'>
+            <span>Выполнено: {active.length} из {task.length}</span>
         </div>
     )
 }

@@ -8,11 +8,10 @@ const TODO = ({width}) =>{
     return(
         <div style={{width: width/2+'px'}} className='container todo'>
             <Header/>
-            <Form/>
+            
             <ErrorBoundary>
                 <Tasklist/>
             </ErrorBoundary>
-            <Footer/>
         </div>
     )
 }

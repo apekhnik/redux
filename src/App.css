@@ -20,9 +20,9 @@
 
 .list-group-item {
   position: relative;
-  overflow: hidden;
-  padding: 5px;
   
+  padding: 5px;
+  min-height: 40px;
 }
 .list-group-item span {
   font-family: 'Pacifico', cursive;
@@ -94,8 +94,11 @@
 
 
 .list-group {
-  max-height: 500px;
-    overflow: hidden;
+  /* min-height: 300px; */
+  /* max-height: 400px;
+  overflow-y: scroll; */
+  box-sizing: border-box;
+  padding-top: 10px;
 }
 /* CSSTransition */
 .list-group-item-enter,
@@ -131,22 +134,17 @@
   form{
     position: relative;
   }
-  .btn-group {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
+  
 /* Form */
 
 
 /* TODO */
   .todo{
-    background-color: #c8d6e5;
+    
     border: transparent;
     border-radius: 5px;
     padding-bottom: 10px;
-    min-height: 300px;
-    
+    position: relative;
   }
 /* TODO */
 
@@ -157,6 +155,35 @@
     width: 100%;
     min-height: 100vh;
     background: rgb(2,0,36);
-background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 48%, rgba(0,212,255,1) 79%);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 48%, rgba(0,212,255,1) 79%);
   }
 /* LAYOUT */
+/* FOOTER */
+  .footer {
+      width: 100%;
+      min-height: 30px;
+      background-color: #c8d6e5;
+  }
+/* FOOTER */
+/* HEADER */
+.header {
+  position: sticky;
+  box-sizing: border-box;
+  padding: 10px;
+  top: 0;
+  z-index: 20;
+  background-color: #8395a7;
+  border-radius: 5px;
+}
+.header h1 {
+  text-align: center;
+}
+.btn-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.badge {
+  font-size: 20px;
+}
+/* HEADER */
