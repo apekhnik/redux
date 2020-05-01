@@ -28,7 +28,7 @@ const Tasklist =()=>{
         <TransitionGroup component='ul' className='list-group'>
                 
                 {filteredTask.map((item, index)=>{
-                    
+                    console.log(item.semiTask)
                     return    <CSSTransition
                                     timeout={500}
                                     classNames="list-group-item"
@@ -40,6 +40,7 @@ const Tasklist =()=>{
                                         id={item.id}
                                         index={index}
                                         isCompleted={item.isCompleted}
+                                        semiTask={item.semiTask}
                                         />
                             </CSSTransition>
                     })

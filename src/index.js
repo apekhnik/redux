@@ -11,7 +11,7 @@ const app =(
       <App width={window.innerWidth}/>
   </Provider>
 )
-// console.log(window.innerWidth)
+
 console.log(store.getState())
 render(
   app,

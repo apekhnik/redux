@@ -12,7 +12,8 @@ const Form = () => {
         const newTask = {
             text: inputValue,
             id: Date.now(),
-            isCompleted: false
+            isCompleted: false,
+            semiTask:[]
         }
         dispatch(addTask(newTask))
         setInputValue('')

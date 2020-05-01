@@ -6,14 +6,13 @@ import Button from './Button'
 import Input from './Input'
 import SemiTasks from './semiTasks'
 
-const Task =({text, onClick, index, isCompleted, id})=>{
+const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const dispatch = useDispatch()
     const [showInput, setShowInput] = useState(false)
     const [inputValue, setInputValue] = useState('')
     
 
-    const t = useSelector(state=>state.task.tasks[id-1])
-    console.log(t.semiTask)
+    
     const clname = isCompleted ? 'ready' : 'no-ready'
     const cl = classnames(
         "list-group-item",
@@ -51,7 +50,7 @@ const Task =({text, onClick, index, isCompleted, id})=>{
                     />
 
                 </div>
-                {t.semiTask != ''&& <SemiTasks tasks={t.semiTask}/>}
+                {semiTask != ''&& <SemiTasks tasks={semiTask}/>}
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 
             
