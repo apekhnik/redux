@@ -24,13 +24,15 @@ const Tasklist =()=>{
     
     return(
         <ul className="list-group">
-            {filteredTask.map((item, index)=><Task 
+            {filteredTask.map((item, index)=>{
+              return  <Task 
                 text={item.text}
                 key={item.id}
                 id={item.id}
                 index={index}
                 isCompleted={item.isCompleted}
-            />)
+            />
+            })
             }
         </ul>
     )
