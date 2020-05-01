@@ -1,4 +1,4 @@
-import { ADD_TASK, REMOVE_TASK, CHANGE_FILTER, COMPLETE_TASK, REWORK_TASK } from "./types";
+import { ADD_TASK, REMOVE_TASK, CHANGE_FILTER, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK } from "./types";
 
 export function addTask(task){
     return{
@@ -28,5 +28,12 @@ export function reworkTask(id){
     return{
         type: REWORK_TASK,
         payload: id
+    }
+}
+export function addSemiTask(id, text){
+    return {
+        type: ADD_SEMI_TASK,
+        payload: id,
+        text
     }
 }

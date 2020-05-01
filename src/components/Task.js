@@ -1,12 +1,19 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { completeTask, reworkTask, removeTask } from '../redux/action'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { completeTask, reworkTask, removeTask, addSemiTask } from '../redux/action'
 import classnames from 'classnames'
 import Button from './Button'
-import { CSSTransition } from 'react-transition-group'
+import Input from './Input'
+import SemiTasks from './semiTasks'
 
 const Task =({text, onClick, index, isCompleted, id})=>{
     const dispatch = useDispatch()
+    const [showInput, setShowInput] = useState(false)
+    const [inputValue, setInputValue] = useState('')
+    
+
+    const t = useSelector(state=>state.task.tasks[id-1])
+    console.log(t.semiTask)
     const clname = isCompleted ? 'ready' : 'no-ready'
     const cl = classnames(
         "list-group-item",
@@ -14,12 +21,22 @@ const Task =({text, onClick, index, isCompleted, id})=>{
     )
     const redo = <i className="fas fa-history"/>
     const complete =  isCompleted ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
+    const addTask = <i className="fas fa-plus-circle"/>
+
+
+    
     return(
         
         <div className={cl} >
             
             <span className={clname}>{index+1}.{text}</span>
+            {/* {showInput&&<Input onChange={(e)=>setInputValue(e.target.value)}/>} */}
                 <div className='complete'>
+                    <Button
+                        className='add-task'
+                        name={addTask}
+                        onClick={()=>dispatch(addSemiTask(id))}
+                    />
                     <Button
                         disabled={!isCompleted}
                         onClick={()=>dispatch(reworkTask(id))}
@@ -34,7 +51,7 @@ const Task =({text, onClick, index, isCompleted, id})=>{
                     />
 
                 </div>
-                
+                {t.semiTask != ''&& <SemiTasks tasks={t.semiTask}/>}
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 
             

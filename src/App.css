@@ -20,9 +20,22 @@
 
 .list-group-item {
   position: relative;
-  
+  margin-bottom: 3px;
   padding: 5px;
   min-height: 40px;
+}
+.add-task{
+  /* position: absolute;
+  bottom: 5px;
+  left: 0; */
+  background: transparent;
+  border: transparent;
+  color: orange;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.add-task:focus {
+  outline: none;
 }
 .list-group-item span {
   font-family: 'Pacifico', cursive;
@@ -169,7 +182,7 @@
 .header {
   position: sticky;
   box-sizing: border-box;
-  padding: 10px;
+  /* padding: 10px; */
   top: 0;
   z-index: 20;
   background-color: #8395a7;

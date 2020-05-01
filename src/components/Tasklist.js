@@ -22,7 +22,7 @@ const Tasklist =()=>{
     
    
     const filteredTask = filterTask(tasks, filter)
-    console.log(filteredTask,'currentFilter')
+    
     
     return(
         <TransitionGroup component='ul' className='list-group'>
