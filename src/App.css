@@ -20,14 +20,38 @@
 
 .list-group-item {
   position: relative;
-  overflow: hidden;
-  padding: 0;
+  margin-bottom: 3px;
+  padding: 5px;
+  min-height: 40px;
+}
+.add-task{
+  /* position: absolute;
+  bottom: 5px;
+  left: 0; */
+  background: transparent;
+  border: transparent;
+  color: orange;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.add-task:focus {
+  outline: none;
+}
+.list-group-item span {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  transition: all .5s ease-in-out;
 }
 .ready{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  
+}
+.ready span {
+  text-decoration: line-through;
+  color: #007bff
 }
 .no-ready {
-  border: 2px solid orangered;
+  /* border: 2px solid orangered; */
 }
 .fa-times {
     font-size: 20px;
@@ -38,15 +62,182 @@
 }
 .complete{
   position: absolute;
-  bottom: 10px;
+  top: 5px;
   right: 35px;
   transition: all .5s linear;
-
+  height: 100%;
 }
 
 .fa-times:hover {
     transform: rotate(90deg);
 }
 .active{
-  background: blue!important;
+  background: #007bff!important;
 }
+.btn-complete-group {
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.btn-danger:disabled {
+  color: #fff;
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #eb2f06;
+  border-color: #eb2f06;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list-group {
+  /* min-height: 300px; */
+  /* max-height: 400px;
+  overflow-y: scroll; */
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+/* CSSTransition */
+.list-group-item-enter,
+.list-group-item-appear {
+  /*We give the list the initial dimension of the list button*/
+  opacity: 0;
+  color: transparent;
+  transform: scale(0.3);
+}
+/* This is where we can add the transition*/
+.list-group-item-enter-done,
+.list-group-item-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 500ms;
+}
+
+/* This fires as soon as the this.state.showList is false */
+.list-group-item-exit {
+  opacity: .3;
+  transform: scale(0.1);
+  transition: all 1000ms;
+}
+/* fires as element leaves the DOM*/
+.list-group-item-exit-active {
+ 
+  
+}
+/* CSSTransition */
+
+
+/* Form */
+  form{
+    position: relative;
+  }
+  
+/* Form */
+
+
+/* TODO */
+  .todo{
+    
+    border: transparent;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    position: relative;
+  }
+  .semi-task {
+    position: absolute;
+    width: 80%;
+    border: transparent;
+    box-sizing: border-box;
+    z-index: 100;
+    right: -1px;
+    background:white;
+    top: 100%;
+    transition: all .5s linear;
+  }
+  .semi-task-item-enter,
+.semi-task-item-appear {
+  /*We give the list the initial dimension of the list button*/
+  opacity: 0;
+  color: transparent;
+  transform: scale(0.3);
+}
+/* This is where we can add the transition*/
+.semi-task-item-enter-done,
+.semi-task-item-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 500ms;
+}
+
+/* This fires as soon as the this.state.showList is false */
+.semi-task-item-exit {
+  opacity: .3;
+  transform: scale(0.1);
+  transition: all 1000ms;
+}
+/* fires as element leaves the DOM*/
+.semi-task-item-exit-active {
+ 
+  
+}
+.semi-task p {
+  border: 1px solid black;
+  margin: 0;
+}
+/* TODO */
+
+
+/* LAYOUT */
+  .layout {
+    padding-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 48%, rgba(0,212,255,1) 79%);
+  }
+/* LAYOUT */
+/* FOOTER */
+  .footer {
+      width: 100%;
+      min-height: 30px;
+      background-color: #c8d6e5;
+  }
+/* FOOTER */
+/* HEADER */
+.header {
+  position: sticky;
+  box-sizing: border-box;
+  /* padding: 10px; */
+  top: 0;
+  z-index: 20;
+  background-color: #8395a7;
+  border-radius: 5px;
+}
+.header h1 {
+  text-align: center;
+}
+.btn-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.badge {
+  font-size: 20px;
+}
+/* HEADER */

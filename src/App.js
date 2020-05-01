@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Form from './components/Form'
-import Tasklist from './components/Tasklist';
-import Filterbutton from './components/FilterButton';
 import './App.css'
-const App = () => {
+import TODO from './HOC/TODO'
+import Layout from './HOC/Layout';
+
+
+const App = ({width}) => {
+  
   return (
-    <div className='container'>
-      <Form/>
-      <Filterbutton/>
-      <Tasklist/>
-    </div>
+    <Layout>
+      <TODO width={width}/>
+    </Layout>
   )
 }
 

@@ -10,7 +10,12 @@ const Button = ({name,onClick, className, disabled}) => {
     )
     
     return(
-            <button onClick={onClick} className={cl} disabled={disabled}>{name}</button>
+            <button 
+                onClick={onClick} 
+                className={cl} 
+                disabled={disabled}>
+                {name}
+            </button>
     )
 }
 export default Button

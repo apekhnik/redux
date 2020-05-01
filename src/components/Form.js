@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../redux/action'
-
+import Filterbutton from './FilterButton'
 
 
 const Form = () => {
@@ -12,7 +12,8 @@ const Form = () => {
         const newTask = {
             text: inputValue,
             id: Date.now(),
-            isCompleted: false
+            isCompleted: false,
+            semiTask:[]
         }
         dispatch(addTask(newTask))
         setInputValue('')
@@ -20,7 +21,6 @@ const Form = () => {
     return (
         <form onSubmit={submitTask}>
             <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Password</label>
                 <input type="text" 
                 className="form-control" 
                 id="exampleInputPassword1"
@@ -28,8 +28,7 @@ const Form = () => {
                 onChange={(e)=>setInputValue(e.target.value)}
                 />
             </div>
-  
-            <button type="submit" className="btn btn-primary">Submit</button>
+            
         </form>
     )
 }

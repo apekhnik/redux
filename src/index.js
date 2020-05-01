@@ -8,9 +8,10 @@ import {rootReducer} from './redux/rootReducer'
 const store = createStore(rootReducer)
 const app =(
   <Provider store={store}>
-      <App />
+      <App width={window.innerWidth}/>
   </Provider>
 )
+
 console.log(store.getState())
 render(
   app,
