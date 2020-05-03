@@ -29,7 +29,7 @@ const Tasklist =()=>{
                 
                 {
                     filteredTask.map((item, index)=>{
-                    console.log(item.semiTask)
+                    
                     return    <CSSTransition
                                     timeout={500}
                                     classNames="list-group-item"

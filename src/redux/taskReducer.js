@@ -1,6 +1,6 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK } from "./types";
 const initialState = {
-    tasks: [{text:'первый таск', id: 0, isCompleted: false, semiTask : []},
+    tasks: [{text:'первый таск', id: 0, isCompleted: false, semiTask : ['test semi task']},
             {text:'второй таск', id: 1, isCompleted: false, semiTask : []},
             {text:'третий таск', id: 2, isCompleted: false, semiTask : []}]
 }

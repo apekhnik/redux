@@ -37,6 +37,13 @@
 .add-task:focus {
   outline: none;
 }
+.show-semi-task-caret {
+  background: transparent;
+  border: transparent;
+}
+.show-semi-task-caret:focus {
+  outline: none;
+}
 .list-group-item span {
   font-family: 'Pacifico', cursive;
   font-size: 20px;
@@ -162,14 +169,17 @@
   .semi-task {
     position: absolute;
     width: 80%;
-    border: transparent;
+    border:transparent;
     box-sizing: border-box;
     z-index: 100;
     right: -1px;
-    background:white;
+    background:#dfe6e9;
     top: 100%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     transition: all .5s linear;
   }
+
   .semi-task-item-enter,
 .semi-task-item-appear {
   /*We give the list the initial dimension of the list button*/
@@ -183,6 +193,7 @@
   opacity: 1;
   transform: scale(1);
   transition: all 500ms;
+  padding: 3px;
 }
 
 /* This fires as soon as the this.state.showList is false */
@@ -197,8 +208,13 @@
   
 }
 .semi-task p {
-  border: 1px solid black;
   margin: 0;
+  font-family: 'Pacifico', cursive;
+  margin-left: 5px;
+  border-bottom: 1px solid #d63031;
+}
+.animCaret {
+  animation: animCrt .5s linear infinite;
 }
 /* TODO */
 
@@ -241,3 +257,25 @@
   font-size: 20px;
 }
 /* HEADER */
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animCrt {
+  0%{
+    transform: scale(0.9);
+  }
+  50%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(0.9);
+  }
+}

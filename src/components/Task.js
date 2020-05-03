@@ -8,7 +8,7 @@ import SemiTasks from './semiTasks'
 
 const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const dispatch = useDispatch()
-    const [showSemi, setSemiShow] = useState(true)
+    const [showSemi, setSemiShow] = useState(false)
     const [inputValue, setInputValue] = useState('')
     
 
@@ -21,12 +21,12 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const redo = <i className="fas fa-history"/>
     const complete =  isCompleted ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
     const addTask = <i className="fas fa-plus-circle"/>
-    const semiVisison = <i class="fas fa-caret-up"></i>
-
-    
+    const semiVisison = showSemi ? <i class="fas fa-caret-up"></i> : <i class="fas fa-caret-down"></i>
+    const anim = semiTask.length > 0 ? true : false
+    console.log(anim)
     return(
         
-        <div className={cl} >
+        <div className={cl} style={{background: showSemi ? '#dfe6e9': 'white'}} >
             
             <span className={clname}>{index+1}.{text}</span>
             {/* {showInput&&<Input onChange={(e)=>setInputValue(e.target.value)}/>} */}
@@ -34,11 +34,16 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
                     <Button
                         name={semiVisison}
                         onClick={()=>setSemiShow(!showSemi)}
+                        className='show-semi-task-caret'
+                        semiTask={anim}
                     />
                     <Button
                         className='add-task'
                         name={addTask}
-                        onClick={()=>dispatch(addSemiTask(id))}
+                        onClick={()=>{
+                            dispatch(addSemiTask(id))
+                            setSemiShow(true)
+                        }}
                     />
                     <Button
                         disabled={!isCompleted}
@@ -55,7 +60,7 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
                     
 
                 </div>
-                {showSemi != ''&& <SemiTasks tasks={semiTask}/>}
+                {showSemi && <SemiTasks tasks={semiTask}/>}
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 
             
