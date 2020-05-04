@@ -1,8 +1,14 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK } from "./types";
 const initialState = {
-    tasks: [{text:'первый таск', id: 0, isCompleted: false, semiTask : ['test semi task']},
-            {text:'второй таск', id: 1, isCompleted: false, semiTask : []},
-            {text:'третий таск', id: 2, isCompleted: false, semiTask : []}]
+    tasks: [{text:'Подготовить 3 реакт проекта на гитхаб',
+             id: 0, isCompleted: false, 
+             semiTask : ['Coctail project','NASA project','TODO project']},
+            {text:'Освоить теорию на learnjs', id: 1, isCompleted: false, 
+            semiTask : ['Прототивы и наследование',
+                        'Промисы async/await',
+                        'Генераторы',
+                        'модули']},
+            {text:'тестовый таск', id: 2, isCompleted: false, semiTask : []}]
 }
 export const taskReducer = (state=initialState, action) =>{
     switch (action.type) {

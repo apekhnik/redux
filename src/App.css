@@ -174,7 +174,7 @@
     z-index: 100;
     right: -1px;
     background:#dfe6e9;
-    top: 100%;
+    top: 110%;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     transition: all .5s linear;
@@ -206,6 +206,14 @@
 .semi-task-item-exit-active {
  
   
+}
+
+.semi-task-item {
+  transition: all .4s linear;
+}
+.semi-task-item:hover {
+  
+  opacity: 1;
 }
 .semi-task p {
   margin: 0;

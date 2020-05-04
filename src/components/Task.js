@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { completeTask, reworkTask, removeTask, addSemiTask } from '../redux/action'
 import classnames from 'classnames'
 import Button from './Button'
-import Input from './Input'
+import {Transition, TransitionGroup} from 'react-transition-group'
+import {Animated} from "react-animated-css"
 import SemiTasks from './semiTasks'
 
 const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const dispatch = useDispatch()
     const [showSemi, setSemiShow] = useState(false)
-    const [inputValue, setInputValue] = useState('')
+    
     
 
     
@@ -23,7 +24,9 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const addTask = <i className="fas fa-plus-circle"/>
     const semiVisison = showSemi ? <i class="fas fa-caret-up"></i> : <i class="fas fa-caret-down"></i>
     const anim = semiTask.length > 0 ? true : false
-    console.log(anim)
+    
+
+    
     return(
         
         <div className={cl} style={{background: showSemi ? '#dfe6e9': 'white'}} >
@@ -61,6 +64,10 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
 
                 </div>
                 {showSemi && <SemiTasks tasks={semiTask}/>}
+                {/* <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={showSemi}>
+                            <SemiTasks tasks={semiTask}/>
+                </Animated> */}
+                
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 
             
