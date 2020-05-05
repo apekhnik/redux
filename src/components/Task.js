@@ -26,7 +26,7 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const anim = semiTask.length > 0 ? true : false
     
 
-    
+    console.log(id)
     return(
         
         <div className={cl} style={{background: showSemi ? '#dfe6e9': 'white'}} >

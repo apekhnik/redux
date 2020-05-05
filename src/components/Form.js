@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../redux/action'
 import Filterbutton from './FilterButton'
-
+import {useSelector} from 'react-redux'
 
 const Form = () => {
     const [inputValue, setInputValue] = useState('')
     const dispatch = useDispatch()
+    const position = useSelector(state=>state.task.tasks.length)
     const submitTask = e =>{
         e.preventDefault()
         const newTask = {
             text: inputValue,
-            id: Date.now(),
+            id: position,
             isCompleted: false,
             semiTask:[]
         }

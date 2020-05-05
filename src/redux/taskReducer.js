@@ -26,8 +26,8 @@ export const taskReducer = (state=initialState, action) =>{
             return {...state, tasks: state.tasks.map(task=>{
                 
                 if(task.id == action.payload){
-                    
-                    const semi = {text:prompt('semi task'), isCompleted: false, id: task.semiTask.length}
+                    console.log(task.semiTask)
+                    const semi = {text: prompt('semi task'), isCompleted: false, id: task.semiTask.length}
                     task.semiTask = task.semiTask.concat(semi)
                     
                 }return task
