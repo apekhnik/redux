@@ -14,20 +14,28 @@ const initialState = {
                         {text:'модули', isCompleted: false, id: 3}]},
             {text:'тестовый таск', id: 2, isCompleted: false, semiTask : []}]
 }
+
+
+
+
 export const taskReducer = (state=initialState, action) =>{
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}
         case ADD_SEMI_TASK:
             return {...state, tasks: state.tasks.map(task=>{
+                
                 if(task.id == action.payload){
-                    task.semiTask = task.semiTask.concat(prompt('semi task'))
+                    
+                    const semi = {text:prompt('semi task'), isCompleted: false, id: task.semiTask.length}
+                    task.semiTask = task.semiTask.concat(semi)
                     
                 }return task
             })}
         case COMPLETE_SEMI_TASK:
             return {...state, tasks: state.tasks.map(task=>{
                 if(task.id == action.parentId){
+                    
                     task.semiTask[action.payload].isCompleted = true;
                     
                 }return task

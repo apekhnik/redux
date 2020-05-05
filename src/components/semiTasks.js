@@ -8,7 +8,7 @@ const SemiTasks = ({tasks, parentId}) => {
         return null
     }
     return(
-        <TransitionGroup component='div' className='semi-task jello'>
+        <TransitionGroup component='div' className='semi-task'>
             {tasks.map((item, index)=>{
                 
                 return <CSSTransition
@@ -19,7 +19,6 @@ const SemiTasks = ({tasks, parentId}) => {
                     <SemiTask 
                         index={item.id} 
                         item={item.text} 
-                        isComplete={item.isCompleted}
                         parentId={parentId}    
                     />
                 </CSSTransition>

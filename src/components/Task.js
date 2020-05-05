@@ -22,7 +22,7 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const redo = <i className="fas fa-history"/>
     const complete =  isCompleted ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
     const addTask = <i className="fas fa-plus-circle"/>
-    const semiVisison = showSemi ? <i class="fas fa-caret-up"></i> : <i class="fas fa-caret-down"></i>
+    const semiVisison = showSemi ? <i className="fas fa-caret-up"></i> : <i className="fas fa-caret-down"></i>
     const anim = semiTask.length > 0 ? true : false
     
 

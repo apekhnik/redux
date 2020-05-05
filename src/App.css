@@ -167,8 +167,9 @@
     position: relative;
   }
   .semi-task {
-    position: absolute;
+    /* position: absolute; */
     width: 80%;
+    margin-left: 20%;
     border:transparent;
     box-sizing: border-box;
     z-index: 100;
@@ -220,6 +221,21 @@
   font-family: 'Pacifico', cursive;
   margin-left: 5px;
   border-bottom: 1px solid #d63031;
+}
+.semi-task-btn{
+  border: transparent;
+  background:transparent;
+  /* color: #007bff; */
+  font-size: 14px;
+  
+}
+.semi-task-btn:focus {
+  outline: none;
+}
+.semiTask-complete {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .animCaret {
   animation: animCrt .5s linear infinite;
