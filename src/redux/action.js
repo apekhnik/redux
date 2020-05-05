@@ -1,4 +1,11 @@
-import { ADD_TASK, REMOVE_TASK, CHANGE_FILTER, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK } from "./types";
+import { ADD_TASK, 
+    REMOVE_TASK, 
+    CHANGE_FILTER, 
+    COMPLETE_TASK, 
+    REWORK_TASK, 
+    ADD_SEMI_TASK, 
+    COMPLETE_SEMI_TASK, 
+    REWORK_SEMI_TASK } from "./types";
 
 export function addTask(task){
     return{
@@ -35,5 +42,19 @@ export function addSemiTask(id, text){
         type: ADD_SEMI_TASK,
         payload: id,
         text
+    }
+}
+export function completeSemiTask(id, parentId){
+    return {
+        type: COMPLETE_SEMI_TASK,
+        payload: id,
+        parentId
+    }
+}
+export function reworkSemiTask(id, parentId){
+    return {
+        type: REWORK_SEMI_TASK,
+        payload: id,
+        parentId
     }
 }
