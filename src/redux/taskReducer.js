@@ -1,6 +1,10 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK, COMPLETE_SEMI_TASK, 
     REWORK_SEMI_TASK } from "./types";
+<<<<<<< HEAD
 
+=======
+import {load} from 'redux-localstorage-simple'
+>>>>>>> refs/remotes/origin/master
 const initialState = {
     tasks: [{text:'Подготовить 3 реакт проекта на гитхаб',
              id: 0, isCompleted: false, 
@@ -18,12 +22,19 @@ const initialState = {
 
 
 
+<<<<<<< HEAD
 // axios.get('https://todo-3de33.firebaseio.com/tasks.json', initialState.tasks)
 //                     .then(response=>{
 //                         console.log(response.data)
 //                     })
                     
 export const taskReducer = (state=initialState, action) =>{
+=======
+
+let TASKS = load({namespace: 'todo-list'});
+console.log(TASKS)
+export const taskReducer = (state=TASKS.task, action) =>{
+>>>>>>> refs/remotes/origin/master
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}
