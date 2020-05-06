@@ -26,13 +26,13 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
     const anim = semiTask.length > 0 ? true : false
     
 
-    console.log(id)
+    
     return(
         
         <div className={cl} style={{background: showSemi ? '#dfe6e9': 'white'}} >
             
             <span className={clname}>{index+1}.{text}</span>
-            {/* {showInput&&<Input onChange={(e)=>setInputValue(e.target.value)}/>} */}
+            
                 <div className='complete'>
                     <Button
                         name={semiVisison}
