@@ -1,5 +1,6 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK, COMPLETE_SEMI_TASK, 
     REWORK_SEMI_TASK } from "./types";
+import {load} from 'redux-localstorage-simple'
 const initialState = {
     tasks: [{text:'Подготовить 3 реакт проекта на гитхаб',
              id: 0, isCompleted: false, 
@@ -18,7 +19,9 @@ const initialState = {
 
 
 
-export const taskReducer = (state=initialState, action) =>{
+let TASKS = load({namespace: 'todo-list'});
+console.log(TASKS)
+export const taskReducer = (state=TASKS.task, action) =>{
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}
