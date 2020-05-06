@@ -1,5 +1,6 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK, COMPLETE_SEMI_TASK, 
     REWORK_SEMI_TASK } from "./types";
+
 const initialState = {
     tasks: [{text:'Подготовить 3 реакт проекта на гитхаб',
              id: 0, isCompleted: false, 
@@ -17,18 +18,24 @@ const initialState = {
 
 
 
-
+// axios.get('https://todo-3de33.firebaseio.com/tasks.json', initialState.tasks)
+//                     .then(response=>{
+//                         console.log(response.data)
+//                     })
+                    
 export const taskReducer = (state=initialState, action) =>{
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}
         case ADD_SEMI_TASK:
             return {...state, tasks: state.tasks.map(task=>{
-                
                 if(task.id == action.payload){
-                    console.log(task.semiTask)
-                    const semi = {text: prompt('semi task'), isCompleted: false, id: task.semiTask.length}
-                    task.semiTask = task.semiTask.concat(semi)
+                    const text = prompt('Enter your semi-task')
+                    if(text!=null&&text!=''){  
+                        const semi = {text, isCompleted: false, id: task.semiTask.length}
+                        task.semiTask = task.semiTask.concat(semi)
+                    }
+                    return task
                     
                 }return task
             })}

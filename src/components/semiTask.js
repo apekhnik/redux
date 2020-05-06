@@ -9,14 +9,14 @@ const SemiTask = ({index, item, parentId}) => {
     
     const complete = useSelector(state=>state.task.tasks[parentId].semiTask[index].isCompleted)
    
-    console.log(useSelector(state=>state.task.tasks))
-    console.log(parentId)
-
+    
+    
+    const textColor = complete ? '#007bff': 'black'
     const textDecor = complete ? 'line-through' : 'none'
     const completeBtn = complete ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
     return(
         <div className='semi-task-item' >
-            <p style={{textDecoration: textDecor}}>{index+1}. {item}</p>
+            <p style={{textDecoration: textDecor, color: textColor}}>{index+1}. {item}</p>
                 <div className='semiTask-complete'>
                     <Button
                                 onClick={()=>dispatch(reworkSemiTask(index, parentId))}
