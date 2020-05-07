@@ -5,7 +5,8 @@ import { ADD_TASK,
     REWORK_TASK, 
     ADD_SEMI_TASK, 
     COMPLETE_SEMI_TASK, 
-    REWORK_SEMI_TASK } from "./types";
+    REWORK_SEMI_TASK,
+    REMOVE_SEMI_TASK } from "./types";
 
 export function addTask(task){
     return{
@@ -55,6 +56,13 @@ export function reworkSemiTask(id, parentId){
     return {
         type: REWORK_SEMI_TASK,
         payload: id,
+        parentId
+    }
+}
+export function removeSemiTask(id, parentId){
+    return{
+        type: REMOVE_SEMI_TASK,
+        id,
         parentId
     }
 }

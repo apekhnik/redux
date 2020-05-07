@@ -1,5 +1,6 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, REWORK_TASK, ADD_SEMI_TASK, COMPLETE_SEMI_TASK, 
-    REWORK_SEMI_TASK } from "./types";
+    REWORK_SEMI_TASK, 
+    REMOVE_SEMI_TASK} from "./types";
 import {load} from 'redux-localstorage-simple'
 const initialState = {
     tasks: [{text:'Подготовить 3 реакт проекта на гитхаб',
@@ -24,7 +25,7 @@ let TASKS = load({namespace: 'todo-list'});
 if(!TASKS || !TASKS.task.tasks || !TASKS.task.tasks.length){
     TASKS.task = initialState
 }
-export const taskReducer = (state=TASKS.task, action) =>{
+export const taskReducer = (state=initialState, action) =>{
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}
@@ -68,6 +69,18 @@ export const taskReducer = (state=TASKS.task, action) =>{
                 if(task.id == action.payload){
                     task.isCompleted = false
                 }return task
+            })}
+        case REMOVE_SEMI_TASK:
+            return{...state, tasks: state.tasks.map(task=>{
+                if(task.id == action.parentId){
+                    
+                    
+                    task.semiTask = task.semiTask.filter(item =>item.id !== action.id)
+                    console.log(task.semiTask.filter(item =>item.id !== action.id))
+                    // return task.filter(item =>item.semiTask.id !== action.id)
+                }return task
+                
+                return task
             })}
         default:return state
     }

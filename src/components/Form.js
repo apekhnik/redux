@@ -11,6 +11,10 @@ const Form = () => {
     const position = useSelector(state=>state.task.tasks.length)
     const submitTask = e =>{
         e.preventDefault()
+        if(inputValue===''||inputValue===null){
+            console.log('помылка')
+            return
+        }
         const newTask = {
             text: inputValue,
             id: position,
@@ -18,25 +22,24 @@ const Form = () => {
             semiTask:[]
         }
         dispatch(addTask(newTask))
-        // Axios.post('https://todo-3de33.firebaseio.com/tasks/task.json',newTask)
-        //         .then(response=>{
-        //             console.log(response)
-        //         })
+        
         setInputValue('')
     }
     
     return (
-        <form onSubmit={submitTask}>
+        <div className='form'>
+            <form onSubmit={submitTask} >
             <div className="form-group">
                 <input type="text" 
                 className="form-control" 
                 id="exampleInputPassword1"
                 value={inputValue}
                 onChange={(e)=>setInputValue(e.target.value)}
+                placeholder='Enter new task'
                 />
             </div>
-            
         </form>
+        </div>
     )
 }
 export default Form

@@ -1,22 +1,28 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {completeSemiTask, reworkSemiTask} from '../redux/action'
+import {completeSemiTask, reworkSemiTask, removeSemiTask} from '../redux/action'
 import Button from './Button'
 
 const SemiTask = ({index, item, parentId}) => {
     
     const dispatch = useDispatch()
-    
-    const complete = useSelector(state=>state.task.tasks[parentId].semiTask[index].isCompleted)
-   
+    const massive = useSelector(state=>state.task.tasks[parentId].semiTask[index])
     
     
+    if(massive===undefined){
+        console.log('ПАЛАМАЛОСЬ', index)
+        return null
+    }
+    let complete = massive.isCompleted
+    console.log(complete)
     const textColor = complete ? '#007bff': 'black'
     const textDecor = complete ? 'line-through' : 'none'
     const completeBtn = complete ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
     return(
         <div className='semi-task-item' >
             <p style={{textDecoration: textDecor, color: textColor}}>{index+1}. {item}</p>
+             
+             {/* {item} */}
                 <div className='semiTask-complete'>
                     <Button
                                 onClick={()=>dispatch(reworkSemiTask(index, parentId))}
@@ -30,7 +36,9 @@ const SemiTask = ({index, item, parentId}) => {
                                 className="semi-task-btn "
                                 name={completeBtn}
                     />
+                    
                 </div>
+                {/* <i className="fas fa-times" onClick={()=>dispatch(removeSemiTask(index, parentId))}/> */}
         </div>
     )
 }

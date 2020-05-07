@@ -153,6 +153,8 @@
 /* Form */
   form{
     position: relative;
+    margin: 0;
+    margin-bottom: 5px;
   }
   
 /* Form */
@@ -234,7 +236,7 @@
 }
 .semiTask-complete {
   position: absolute;
-  right: 0;
+  right: 50%;
   top: 0;
 }
 .animCaret {
@@ -263,7 +265,7 @@
 .header {
   position: sticky;
   box-sizing: border-box;
-  /* padding: 10px; */
+  padding: 10px;
   top: 0;
   z-index: 20;
   background-color: #8395a7;
