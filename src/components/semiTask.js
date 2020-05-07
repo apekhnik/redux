@@ -38,7 +38,7 @@ const SemiTask = ({index, item, parentId}) => {
                     />
                     
                 </div>
-                {/* <i className="fas fa-times" onClick={()=>dispatch(removeSemiTask(index, parentId))}/> */}
+                <i className="fas fa-times" onClick={()=>dispatch(removeSemiTask(index, parentId))}/>
         </div>
     )
 }
