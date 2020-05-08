@@ -8,8 +8,7 @@ const SemiTasks = ({tasks, parentId}) => {
         return null
     }
     let massive = useSelector(state=>state.task.tasks[parentId].semiTask)
-    console.log(massive)
-    console.log(tasks)
+    
     return(
         
         <TransitionGroup component='div' className='semi-task'>

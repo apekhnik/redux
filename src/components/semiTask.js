@@ -14,7 +14,7 @@ const SemiTask = ({index, item, parentId}) => {
         return null
     }
     let complete = massive.isCompleted
-    console.log(complete)
+    
     const textColor = complete ? '#007bff': 'black'
     const textDecor = complete ? 'line-through' : 'none'
     const completeBtn = complete ? <i className="fas fa-check-double"/>:<i className="fas fa-check"/>
