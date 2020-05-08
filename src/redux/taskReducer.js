@@ -74,10 +74,10 @@ export const taskReducer = (state=initialState, action) =>{
             return{...state, tasks: state.tasks.map(task=>{
                 if(task.id == action.parentId){
                     
-                    
+                    console.log(task.semiTask)
                     task.semiTask = task.semiTask.filter(item =>item.id !== action.id)
                     console.log(task.semiTask.filter(item =>item.id !== action.id))
-                    // return task.filter(item =>item.semiTask.id !== action.id)
+                    
                 }return task
                 
                 return task

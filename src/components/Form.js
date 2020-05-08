@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../redux/action'
-import Filterbutton from './FilterButton'
 import {useSelector} from 'react-redux'
-import Axios from 'axios'
+
 
 const Form = () => {
     const [inputValue, setInputValue] = useState('')
