@@ -8,7 +8,7 @@ const Header = () => {
     return(
         <div className='header'>
             <Badge/>
-            <Title text='Список дел'/>
+            <Title text='TODO list'/>
             <Filterbutton/>
             <Form/>
         </div>

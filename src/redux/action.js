@@ -6,7 +6,9 @@ import { ADD_TASK,
     ADD_SEMI_TASK, 
     COMPLETE_SEMI_TASK, 
     REWORK_SEMI_TASK,
-    REMOVE_SEMI_TASK } from "./types";
+    REMOVE_SEMI_TASK,
+    ERROR_IS_ON,
+    ERROR_IS_OFF } from "./types";
 
 export function addTask(task){
     return{
@@ -64,5 +66,17 @@ export function removeSemiTask(id, parentId){
         type: REMOVE_SEMI_TASK,
         id,
         parentId
+    }
+}
+export function errorIsOn(text){
+    return{
+        type: ERROR_IS_ON,
+        text
+    }
+}
+export function errorIsOff(text){
+    return{
+        type: ERROR_IS_OFF,
+        text
     }
 }

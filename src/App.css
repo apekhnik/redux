@@ -239,6 +239,18 @@
   right: 50%;
   top: 0;
 }
+.semiRemoveBtn {
+    font-size: 20px;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    transition: all .3s linear;
+    background-color: transparent;
+    border: transparent;
+}
+.semiRemoveBtn:hover {
+  transform: rotate(90deg);
+}
 .animCaret {
   animation: animCrt .5s linear infinite;
 }
@@ -283,7 +295,10 @@
   font-size: 20px;
 }
 /* HEADER */
-
+.alert-component{
+  position: absolute;
+  top: -50px;
+}
 
 
 

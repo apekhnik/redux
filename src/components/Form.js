@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addTask } from '../redux/action'
+import { addTask, errorIsOn, errorIsOff } from '../redux/action'
 import {useSelector} from 'react-redux'
 
 
@@ -11,7 +11,10 @@ const Form = () => {
     const submitTask = e =>{
         e.preventDefault()
         if(inputValue===''||inputValue===null){
-            console.log('помылка')
+            dispatch(errorIsOn('Некоректно введенный таск'))
+            setTimeout(()=>{
+                dispatch(errorIsOff('Некоректно введенный таск')) 
+            },2000)
             return
         }
         const newTask = {

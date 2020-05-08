@@ -15,7 +15,7 @@ const SemiTasks = ({tasks, parentId}) => {
             
             {tasks.map((item, index)=>{
                 
-                console.log(massive)
+                console.log(tasks)
                 return <CSSTransition
                     classNames='semi-task-item'
                     timeout={300}

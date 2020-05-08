@@ -64,9 +64,7 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
 
                 </div>
                 {showSemi && <SemiTasks tasks={semiTask} parentId={id}/>}
-                {/* <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={showSemi}>
-                            <SemiTasks tasks={semiTask}/>
-                </Animated> */}
+                
                 
                 <i className="fas fa-times" onClick={()=>dispatch(removeTask(id))}/>
 

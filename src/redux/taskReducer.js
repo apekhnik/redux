@@ -23,6 +23,7 @@ const initialState = {
 let TASKS = load({namespace: 'todo-list'});
 
 if(!TASKS || !TASKS.task.tasks || !TASKS.task.tasks.length){
+    console.log('поломался локалсторейдж')
     TASKS.task = initialState
 }
 export const taskReducer = (state=initialState, action) =>{

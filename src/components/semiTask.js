@@ -7,7 +7,8 @@ const SemiTask = ({index, item, parentId}) => {
     
     const dispatch = useDispatch()
     const massive = useSelector(state=>state.task.tasks[parentId].semiTask[index])
-    
+    const semiLength = useSelector(state=>state.task.tasks[parentId].semiTask.length)-1
+    const semiRemoveDisable = semiLength == index ? false : true
     
     if(massive===undefined){
         console.log('ПАЛАМАЛОСЬ', index)
@@ -38,7 +39,13 @@ const SemiTask = ({index, item, parentId}) => {
                     />
                     
                 </div>
-                <i className="fas fa-times" onClick={()=>dispatch(removeSemiTask(index, parentId))}/>
+                
+                <Button
+                     onClick={()=>dispatch(removeSemiTask(index, parentId))}
+                     name={<i class="far fa-times-circle"></i>}
+                     className='semiRemoveBtn'
+                     disabled={semiRemoveDisable}
+                />
         </div>
     )
 }
