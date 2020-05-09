@@ -11,7 +11,7 @@ import {Animated} from "react-animated-css"
 const TODO = ({width}) =>{
     const currentWidth  = width < 1366 ? width*0.7 : width/2
     const hasError = useSelector(state=>state.error)
-    
+    console.log(hasError)
     return(
         <div style={{width: currentWidth+'px'}} className='container todo'>
             <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={hasError.error} >

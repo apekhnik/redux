@@ -26,7 +26,7 @@ if(!TASKS || !TASKS.task.tasks || !TASKS.task.tasks.length){
     console.log('поломался локалсторейдж')
     TASKS.task = initialState
 }
-export const taskReducer = (state=initialState, action) =>{
+export const taskReducer = (state=TASKS.task, action) =>{
     switch (action.type) {
         case ADD_TASK:
             return {...state, tasks: state.tasks.concat(action.payload)}

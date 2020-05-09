@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {createStore, compose, applyMiddleware} from 'redux'
 import {rootReducer} from './redux/rootReducer'
 import {save} from 'redux-localstorage-simple'
-
+import thunk from 'redux-thunk'
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
   typeof window === 'object' &&
@@ -19,7 +19,7 @@ const composeEnhancers =
         rootReducer,
         preloadedState,
         composeEnhancers(
-          applyMiddleware(save({namespace: 'todo-list'}))
+          applyMiddleware(save({namespace: 'todo-list'}), thunk)
         ),
       )
     );

@@ -80,3 +80,11 @@ export function errorIsOff(text){
         text
     }
 }
+export function errorToggle(text){
+    return (dispatch) => {
+        dispatch(errorIsOn(text))
+        setTimeout(()=>{
+            dispatch(errorIsOff(text))
+        }, 2000)
+    }
+}

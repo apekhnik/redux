@@ -23,7 +23,7 @@ const SemiTask = ({index, item, parentId}) => {
         <div className='semi-task-item' >
             <p style={{textDecoration: textDecor, color: textColor}}>{index+1}. {item}</p>
              
-             {/* {item} */}
+            
                 <div className='semiTask-complete'>
                     <Button
                                 onClick={()=>dispatch(reworkSemiTask(index, parentId))}
@@ -42,7 +42,7 @@ const SemiTask = ({index, item, parentId}) => {
                 
                 <Button
                      onClick={()=>dispatch(removeSemiTask(index, parentId))}
-                     name={<i class="far fa-times-circle"></i>}
+                     name={<i className="far fa-times-circle"></i>}
                      className='semiRemoveBtn'
                      disabled={semiRemoveDisable}
                 />
