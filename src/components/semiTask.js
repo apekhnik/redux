@@ -37,15 +37,15 @@ const SemiTask = ({index, item, parentId}) => {
                                 className="semi-task-btn "
                                 name={completeBtn}
                     />
-                    
+                    <Button
+                                onClick={()=>dispatch(removeSemiTask(index, parentId))}
+                                name={<i className="far fa-times-circle"></i>}
+                                className='semiRemoveBtn'
+                                disabled={semiRemoveDisable}
+                />
                 </div>
                 
-                <Button
-                     onClick={()=>dispatch(removeSemiTask(index, parentId))}
-                     name={<i className="far fa-times-circle"></i>}
-                     className='semiRemoveBtn'
-                     disabled={semiRemoveDisable}
-                />
+                
         </div>
     )
 }

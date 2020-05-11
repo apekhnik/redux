@@ -35,9 +35,9 @@ export const taskReducer = (state=TASKS.task, action) =>{
         case ADD_SEMI_TASK:
             return {...state, tasks: state.tasks.map(task=>{
                 if(task.id == action.payload){
-                    const text = prompt('Enter your semi-task')
-                    if(text!=null&&text!=''){  
-                        const semi = {text, isCompleted: false, id: task.semiTask.length}
+
+                    if(action.text!=null&&action.text!=''){  
+                        const semi = {text:action.text, isCompleted: false, id: task.semiTask.length}
                         task.semiTask = task.semiTask.concat(semi)
                     }
                     return task

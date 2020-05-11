@@ -95,7 +95,10 @@
   background-color: #eb2f06;
   border-color: #eb2f06;
 }
-
+.btn{
+  font-family: 'Noto Sans JP', sans-serif;
+  
+}
 
 
 
@@ -156,7 +159,12 @@
     margin: 0;
     margin-bottom: 5px;
   }
-  
+  .form-group {
+    margin: 0;
+  }
+  .form-control::placeholder {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
 /* Form */
 
 
@@ -236,14 +244,15 @@
 }
 .semiTask-complete {
   position: absolute;
-  right: 50%;
+  right:0%;
   top: 0;
+  font-size: 20px;
 }
 .semiRemoveBtn {
     font-size: 20px;
-    position: absolute;
+    /* position: absolute;
     top: -5px;
-    right: 0px;
+    right: 0px; */
     transition: all .3s linear;
     background-color: transparent;
     border: transparent;
@@ -285,6 +294,7 @@
 }
 .header h1 {
   text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 .btn-group {
   position: absolute;
@@ -293,6 +303,7 @@
 }
 .badge {
   font-size: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 /* HEADER */
 .alert-component{

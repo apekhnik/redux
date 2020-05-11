@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { completeTask, reworkTask, removeTask, addSemiTask } from '../redux/action'
+import { completeTask, reworkTask, removeTask, addSemiTask, errorToggle } from '../redux/action'
 import classnames from 'classnames'
 import Button from './Button'
 import {Transition, TransitionGroup} from 'react-transition-group'
@@ -44,7 +44,12 @@ const Task =({text, onClick, index, isCompleted, id,semiTask})=>{
                         className='add-task'
                         name={addTask}
                         onClick={()=>{
-                            dispatch(addSemiTask(id))
+                            const semi = prompt('Enter your semi-task')
+                            if(semi===null||semi===''){
+                                dispatch(errorToggle('Вы не ввели значение'))
+                                return
+                            }
+                            dispatch(addSemiTask(id, semi))
                             setSemiShow(true)
                         }}
                     />
