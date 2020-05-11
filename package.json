@@ -1,6 +1,7 @@
 {
   "name": "2204",
   "version": "0.1.0",
+  "homepage": "http://apekhnik.github.io/redux",
   "private": true,
   "dependencies": {
     "animate.css": "^3.7.2",
@@ -16,11 +17,15 @@
     "redux-localstorage-simple": "^2.2.0",
     "redux-thunk": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
